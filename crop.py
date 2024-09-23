@@ -10,10 +10,9 @@ filas       =   [0, 800, 1600, 2400, 3200, 4000]
 fotos=os.listdir('./img/in/')
 #print(fotos)
 
-for fotito in fotos :
-    for l in tqdm(range(len(fotos))): # solo para la barrita
-        pass
+for fotito in tqdm(fotos, mininterval=1, unit="archivos"):
         img=1
+       # tqdm(img ,fotito, unit:"foto")
         image = cv2.imread('./img/in/'+fotito)
         #2250x4000 archivo de drone dji 2.7k mavic mini 1
         #800x450 recorte de salida dividido en 5 para q encaje
